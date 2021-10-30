@@ -21,7 +21,19 @@ ul{
     width: 940px;
     margin: 0 auto;
 }
-
+.arrow{
+    width: 30px;
+    height: 30px;
+    position:fixed;
+    bottom: 20px;
+    right: 10px;
+    display: none;
+}
+.arrow i{
+    font-size: 30px;
+    color: #0872b9;
+    display:block;
+}
 /* =======================
 common css end
 =========================== */
@@ -80,39 +92,61 @@ margin css end
 /* =======================
 heading css end
 =========================== */
-
-
-.header-bg{
+.head{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+}
+.head-fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    animation: fix 1s linear;
+    -webkit-animation: fix 1s linear;
+}
+@keyframes fix{
+    0%{
+        top: -100px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.head .header-bg{
     height:32px;
     background:#0872b9;
 }
-.header-bg .header{
+.head .header-bg .header{
     height:32px;
 }
-.header-bg .header .header-text{
+.head .header-bg .header .header-text{
     height:100%;
     width: 140px;
     float: left;
 }
-.header-bg .header .header-text{
+.head .header-bg .header .header-text{
     font-family: open-reg;
     font-size: 14px;
     color:#e7e7e7 ;
     line-height: 32px;
 }
 
-.header-bg .header .header-social{
+.head .header-bg .header .header-social{
     height:100%;
     width: 800px;
     float: left;
 }
-.header-bg .header .header-social ul{
+.head .header-bg .header .header-social ul{
     float: right;
 }
-.header-bg .header .header-social ul li{
+.head .header-bg .header .header-social ul li{
     float: left;
 }
-.header-bg .header .header-social ul li a i{
+.head .header-bg .header .header-social ul li a i{
     text-transform: capitalize;
     line-height: 32px;
     margin-left: 24px;
@@ -123,37 +157,38 @@ heading css end
     -ms-transition: all linear .5s;
     -o-transition: all linear .5s;
 }
-.header-bg .header .header-social ul li a i:hover{
+.head .header-bg .header .header-social ul li a i:hover{
     color: #353535;
 }
 
 /* ===================
 header css end
 ===================== */
-.menu-bg{
+.head .menu-bg{
     height:80px;
+    background: #f1f1f1;
 }
-.menu-bg .menu-content{
+.head .menu-bg .menu-content{
     height:100%;
 }
-.menu-bg .menu-content .logo{
+.head .menu-bg .menu-content .logo{
     width:80px ;
     height: 100%;
     line-height: 80px;
     float: left;
 }
-.menu-bg .menu-content .menu{
+.head .menu-bg .menu-content .menu{
     width: 860px;
     height: 100%;
     float: left;
 }
-.menu-bg .menu-content .menu ul{
+.head .menu-bg .menu-content .menu ul{
     float: right;
 }
-.menu-bg .menu-content .menu ul li{
+.head .menu-bg .menu-content .menu ul li{
     float:left;
 }
-.menu-bg .menu-content .menu ul li a{
+.head .menu-bg .menu-content .menu ul li a{
     text-transform: capitalize;
     line-height: 80px;
     margin-left: 24px;
@@ -167,14 +202,14 @@ header css end
     -ms-transition: all linear .3s;
     -o-transition: all linear .3s;
 }
-.menu-bg .menu-content .menu ul li a:hover{
+.head .menu-bg .menu-content .menu ul li a:hover{
     color: #0872b9;
 }
 /* ==================
 menu css end
 ==================== */
 .banner-bg{
-    height: 400px;
+    height: 500px;
     background: url(../images/banner.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -185,7 +220,7 @@ menu css end
 .banner-bg::after{
     content: "";
     width: 100%;
-    height: 400px;
+    height: 100%;
     background:rgba(0, 0, 0,.6);
     position: absolute;
     top: 0;
@@ -198,7 +233,7 @@ menu css end
     text-align: right;
 }
 .banner-bg .banner h3{
-    padding-top:75px; 
+    padding-top:175px; 
     text-transform: capitalize;
     font-size: 30px;
     font-family: 'Oswald', sans-serif;
